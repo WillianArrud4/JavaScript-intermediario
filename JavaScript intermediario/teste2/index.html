@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #counter {
+            font-size: 30px;
+        }
+        .active-green{
+            background-color: green;
+        }
+        .active-red {
+            background-color: red;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div id="counter">0</div>
+    <button id="bnt-negativo">-</button>
+    <button id="bnt-positivo">+</button>
+
+    <script>
+
+        let counter = 0
+
+        const counterjs = document.querySelector('#counter')
+        const bntNegativo = document.querySelector('#bnt-negativo')
+        const bntpositivo = document.querySelector('#bnt-positivo')
+
+        let increaseInterval
+        let decreaseInterval
+
+        bntNegativo.onclick = function() {
+            clearInterval(increaseInterval)
+
+            bntNegativo.classList.add('active-red')
+            bntpositivo.classList.remove('active-green')
+
+            decreaseInterval = setInterval(function() {
+                counter--
+                counterjs.innerText = counter
+            }, 100)
+        }
+
+        bntpositivo.onclick = function(evento) {
+            clearInterval(decreaseInterval)
+
+            bntpositivo.classList.add('active-green')
+            bntNegativo.classList.remove('active-red')
+
+            increaseInterval = setInterval(function() {
+                counter++
+                counterjs.innerText = counter
+            }, 100)
+        }
+
+
+    </script>
+
+</body>
+</html>

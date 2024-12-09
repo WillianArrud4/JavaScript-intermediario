@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div id="contador">0</div>
+    <button id="negativo">-</button>
+    <button id="posetivo">+</button>
+
+    <script>
+        let counter = 0
+
+        const contador = document.querySelector('#contador')
+        const negativo = document.querySelector('#negativo')
+        const positivo = document.querySelector('#posetivo')
+
+        negativo.onclick = function() {
+            counter--
+            contador.innerText = counter
+        }   
+
+        posetivo.onclick = function() {
+            counter++ 
+            contador.innerText = counter
+        
+        }
+
+    </script>
+
+</body>
+</html>
